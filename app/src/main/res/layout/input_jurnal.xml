@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InputJurnalActivity">
+
+    <TextView
+        android:id="@+id/textLimitJurnal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/limitUploadJurnal"
+        android:textColor="@color/secondary"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/textUploadJurnal"
+        app:layout_constraintTop_toBottomOf="@+id/textTipeJurnal" />
+
+    <TextView
+        android:id="@+id/textUploadJurnal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/textUploadJurnal"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputAbstrak" />
+
+    <TextView
+        android:id="@+id/textInputAbstrak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/textInputAbstrak"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputTahun" />
+
+    <EditText
+        android:id="@+id/inputTahun"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/inputTahun"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/secondary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/textInputTahun"
+        app:layout_constraintTop_toBottomOf="@+id/textInputTahun" />
+
+    <TextView
+        android:id="@+id/textInputTahun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/textInputTahun"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPenulis" />
+
+    <EditText
+        android:id="@+id/inputPenulis"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/inputPenulis"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/secondary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/textInputPenulis"
+        app:layout_constraintTop_toBottomOf="@+id/textInputPenulis" />
+
+    <TextView
+        android:id="@+id/textInputPenulis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/textInputPenulis"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputJudul" />
+
+    <EditText
+        android:id="@+id/inputJudul"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/inputJudul"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/secondary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/textInputJudul"
+        app:layout_constraintTop_toBottomOf="@+id/textInputJudul" />
+
+    <ImageButton
+        android:id="@+id/returnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:contentDescription="@string/returnBtn"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:adjustViewBounds="true"
+        android:background="#FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/journall_logo"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/textInputJudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/textInputJudul"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+    <TextView
+        android:id="@+id/judulInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/judulInput"
+        android:textAlignment="center"
+        android:textColor="@color/primary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15595075" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
+
+    <EditText
+        android:id="@+id/inputAbstrak"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:gravity="start|top"
+        android:hint="@string/inputAbstrak"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        android:singleLine="false"
+        android:textColor="@color/secondary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/textInputAbstrak"
+        app:layout_constraintTop_toBottomOf="@+id/textInputAbstrak" />
+
+    <TextView
+        android:id="@+id/textTipeJurnal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/tipeUploadJurnal"
+        android:textColor="@color/secondary"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/textUploadJurnal"
+        app:layout_constraintTop_toBottomOf="@+id/textUploadJurnal" />
+
+    <Button
+        android:id="@+id/submitbtn"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/primary"
+        android:clickable="true"
+        android:paddingLeft="36dp"
+        android:paddingRight="36dp"
+        android:text="@string/submitbtn"
+        android:textAllCaps="false"
+        app:cornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uploadBtn"
+        android:focusable="true" />
+
+    <ImageButton
+        android:id="@+id/uploadBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/roundbutton"
+        android:contentDescription="@string/uploadJurnalBtn"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="@+id/textLimitJurnal"
+        app:layout_constraintTop_toBottomOf="@+id/textLimitJurnal"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

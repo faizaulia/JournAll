@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/roundbutton"
+    android:padding="5dp"
+    tools:context=".CariJournalItemActivity">
+
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="330dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/judulJurnal"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/penulisTahun"
+        android:layout_width="330dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/penulisTahunJurnal"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/judul"
+        app:layout_constraintTop_toBottomOf="@+id/judul" />
+
+    <ImageButton
+        android:id="@+id/detailBtn"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="5dp"
+        android:backgroundTint="@color/primary"
+        android:contentDescription="@string/dtlBtn"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/judul"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
+</androidx.constraintlayout.widget.ConstraintLayout>

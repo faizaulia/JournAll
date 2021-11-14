@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register">
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_sAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/poppins"
+        android:text="Security Answer"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_squestion" />
+
+    <TextView
+        android:id="@+id/tv_passwordregis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/poppins"
+        android:text="Password"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_email" />
+
+    <TextView
+        android:id="@+id/tv_cmpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins"
+        android:text="Confirm password"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_passregis" />
+
+    <TextView
+        android:id="@+id/tv_sQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/poppins"
+        android:text="Security Question"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_cmpass" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="155dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="135dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_register" />
+
+    <TextView
+        android:id="@+id/tv_emailRe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/poppins"
+        android:text="Email"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_username" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="155dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="135dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_register" />
+
+    <TextView
+        android:id="@+id/tv_Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="2dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Registration"
+        android:textColor="@color/primary"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/poppins"
+        android:text="Username"
+        android:textColor="@color/primary"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Register" />
+
+    <EditText
+        android:id="@+id/ed_username"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:hint="Type your username"
+        android:inputType="textPersonName"
+        android:textColor="@color/secondary"
+        android:textColorHint="@color/secondary"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+
+        <EditText
+            android:id="@+id/ed_email"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="40dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Type your email"
+            android:inputType="textWebEmailAddress"
+            android:textColor="@color/secondary"
+            android:textColorHint="@color/secondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_emailRe" />
+
+        <EditText
+            android:id="@+id/ed_passregis"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="40dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Type your password"
+            android:inputType="textPassword"
+            android:textColor="@color/secondary"
+            android:textColorHint="@color/secondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_passwordregis" />
+
+        <EditText
+            android:id="@+id/ed_cmpass"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="40dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Retype your password"
+            android:inputType="textPassword"
+            android:textColor="@color/secondary"
+            android:textColorHint="@color/secondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cmpass" />
+
+        <EditText
+            android:id="@+id/ed_squestion"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="40dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Type your question"
+            android:inputType="textPersonName"
+            android:textColor="@color/secondary"
+            android:textColorHint="@color/secondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sQuestion" />
+
+        <EditText
+            android:id="@+id/ed_sanswer"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="40dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Type your username"
+            android:inputType="textPersonName"
+            android:textColor="@color/secondary"
+            android:textColorHint="@color/secondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sAnswer" />
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="261dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="@color/primary"
+            android:clickable="true"
+            android:fontFamily="@font/poppins"
+            android:paddingLeft="36dp"
+            android:paddingRight="36dp"
+            android:text="Register"
+            app:cornerRadius="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_sanswer" />
+
+    <ImageButton
+        android:id="@+id/btn_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="69dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

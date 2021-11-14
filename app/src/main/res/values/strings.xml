@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">JournAll</string>
+    <string name="hi">Hallo</string>
+    <string name="username">Guest!</string>
+    <string name="login">Login</string>
+    <string name="profil">Profil</string>
+    <string name="cari">Cari Jurnal</string>
+    <string name="unduh">Unduh Jurnal</string>
+    <string name="unggah">Unggah Jurnal</string>
+    <string name="judulDetail">Detail Jurnal</string>
+    <string name="judulInput">Input Jurnal</string>
+    <string name="judulCari">Pencarian Jurnal</string>
+    <string name="judulJurnal">Educational data mining and analysis of students’
+        academic performance using WEKA</string>
+    <string name="penulisTahunJurnal">S Hussain, NA Dahan, FM Ba-Alwib, N Ribata
+        <br />2018</string>
+    <string name="abstraksiJurnal">In this competitive scenario of the educational system,
+        the higher education institutes use data mining tools and techniques for academic
+        improvement of the student performance and to prevent drop out.
+        The authors collected data from three colleges of Assam, India</string>
+    <string name="logout">Logout</string>
+    <string name="profilBtn">Ke Halaman Profil</string>
+    <string name="cariBtn">Ke Halaman Cari</string>
+    <string name="dtlBtn">Ke Halaman Detail</string>
+    <string name="deleteBtn">Hapus Jurnal</string>
+    <string name="unduhBtn">Ke Halaman Unduh</string>
+    <string name="unggahBtn">Ke Halaman Unggah</string>
+    <string name="logoutBtn">Ke Halaman Logout</string>
+    <string name="returnBtn">Kembali ke sebelumnya</string>
+    <string name="dwnldBtn">Unduh</string>
+    <string name="textInputJudul">Judul</string>
+    <string name="textInputPenulis">Penulis</string>
+    <string name="textInputTahun">Tahun</string>
+    <string name="textInputAbstrak">Abstrak</string>
+    <string name="textUploadJurnal">Upload file jurnal</string>
+    <string name="tipeUploadJurnal">File type PDF</string>
+    <string name="limitUploadJurnal">Max. File size: 20MB</string>
+    <string name="submitbtn">Submit</string>
+    <string name="inputJudul">Masukkan judul jurnal…</string>
+    <string name="inputPenulis">Masukkan penulis jurnal…</string>
+    <string name="inputTahun">Masukkan tahun pembuatan jurnal…</string>
+    <string name="inputAbstrak">Masukkan abstraksi jurnal…</string>
+    <string name="inputCari">Cari Nama Jurnal</string>
+    <string name="uploadJurnalBtn">Pilih Jurnal</string>
+    <string name="avatar">Foto Profil</string>
+    <string name="nama">Dominicus Christian</string>
+    <string name="textEmail">Email</string>
+    <string name="email">Dominicus@student.ub.ac.id</string>
+</resources>
