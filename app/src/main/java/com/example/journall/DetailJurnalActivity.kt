@@ -1,5 +1,6 @@
 package com.example.journall
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -20,7 +21,8 @@ class DetailJurnalActivity : AppCompatActivity() {
             dwnldBtn.backgroundTintList = newColor
         }
         returnBtn.setOnClickListener {
-            finish()
+            var i = Intent(this,JurnalList::class.java)
+            startActivity(i)
         }
     }
 }

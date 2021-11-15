@@ -11,10 +11,8 @@ class CariJurnalActivity : AppCompatActivity() {
         setContentView(R.layout.cari_jurnal)
         val returnBtn = findViewById<ImageButton>(R.id.returnButton)
         returnBtn.setOnClickListener {
-            finish()
+            var i = Intent(this,JurnalList::class.java)
+            startActivity(i)
         }
-
-        var i = Intent(this,JurnalList::class.java)
-        startActivity(i)
     }
 }

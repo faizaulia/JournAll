@@ -1,10 +1,12 @@
 package com.example.journall
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatViewInflater
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class JurnalList: AppCompatActivity() {
@@ -33,7 +35,17 @@ class JurnalList: AppCompatActivity() {
             val user = userSnapshot.getValue(Jurnal::class.java)
             jurnalArrayList.add(user!!)
           }
-          jurnalRecycleView.adapter = JurnalAdapter(jurnalArrayList)
+          var adapter = JurnalAdapter(jurnalArrayList)
+          jurnalRecycleView.adapter = adapter
+          adapter.setOnItemClickListener(object : JurnalAdapter.onItemClickListener{
+            override fun onItemClicked(position: Int) {
+              val intent = Intent(this@JurnalList, DetailJurnalActivity::class.java)
+              intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+              intent.putExtra("position", position)
+              startActivity(intent)
+            }
+
+          })
         }
       }
       override fun onCancelled(error: DatabaseError) {
