@@ -1,5 +1,6 @@
 package com.example.journall
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -12,5 +13,8 @@ class CariJurnalActivity : AppCompatActivity() {
         returnBtn.setOnClickListener {
             finish()
         }
+
+        var i = Intent(this,JurnalList::class.java)
+        startActivity(i)
     }
 }
