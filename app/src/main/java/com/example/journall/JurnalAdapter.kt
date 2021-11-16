@@ -2,6 +2,7 @@ package com.example.journall
 
 import android.app.Activity
 import android.app.Application
+import android.content.ContentValues
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -49,7 +50,9 @@ class JurnalAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Ada
 
     init {
       itemView.setOnClickListener {
-        listener.onItemClicked(adapterPosition)
+        Log.d("TAG", "TOLONG ISI ${itemView}")
+
+//        listener.onItemClicked(adapterPosition)
       }
     }
   }

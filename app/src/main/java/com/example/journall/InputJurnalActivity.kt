@@ -1,5 +1,6 @@
 package com.example.journall
 
+import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -34,7 +35,11 @@ class InputJurnalActivity : AppCompatActivity() {
                 var model = JurnalModel(judul, penulis, tahun, abstrak)
                 var id = databaseReference.push().key
 
-                databaseReference.child(id!!).setValue(model)
+                databaseReference.child(id!!).setValue(model).addOnCompleteListener {task ->
+                    if (task.isSuccessful) {
+                        Log.d(ContentValues.TAG, "Jurnal Berhasil Ditambahkan")
+                    }
+                }
             }
         }
     }
