@@ -43,15 +43,14 @@ class MainActivity : AppCompatActivity() {
         login.setOnClickListener{
             intent = Intent(this@MainActivity, Login::class.java)
             startActivity(intent)
-
         }
 
         profileButton.setOnClickListener {
-            intent = Intent(this@MainActivity, ProfileActivity::class.java)
+            intent = Intent(this@MainActivity, OwnedList::class.java)
             startActivity(intent)
         }
         cariButton.setOnClickListener {
-            intent = Intent(this@MainActivity, CariJurnalActivity::class.java)
+            intent = Intent(this@MainActivity, JurnalList::class.java)
             startActivity(intent)
         }
         uploadButton.setOnClickListener {
