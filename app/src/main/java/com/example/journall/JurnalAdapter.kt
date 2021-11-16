@@ -33,7 +33,7 @@ class JurnalAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Ada
   override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
     val currentitem = jurnalList[position]
     holder.judul.text = currentitem.judul
-    holder.penulisTahun.text = currentitem.penulis + " " + currentitem.tahun
+    holder.penulisTahun.text = currentitem.penulis + "\n " + currentitem.tahun
   }
 
   override fun getItemCount(): Int {

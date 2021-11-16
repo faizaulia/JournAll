@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         cariButton.setOnClickListener {
-            intent = Intent(this@MainActivity, CariJurnalActivity::class.java)
+            intent = Intent(this@MainActivity, JurnalList::class.java)
             startActivity(intent)
         }
         uploadButton.setOnClickListener {
