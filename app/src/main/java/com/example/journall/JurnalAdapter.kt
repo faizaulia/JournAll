@@ -4,10 +4,12 @@ import android.app.Activity
 import android.app.Application
 import android.content.ContentValues
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
@@ -19,7 +21,7 @@ class JurnalAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Ada
   private lateinit var mListener: onItemClickListener
 
   interface onItemClickListener {
-    fun onItemClicked(position: Int)
+    fun onItemClicked(key: String?, position: Int)
   }
 
   fun setOnItemClickListener(listener: onItemClickListener) {
@@ -28,13 +30,22 @@ class JurnalAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Ada
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
     val itemView = LayoutInflater.from(parent.context).inflate(R.layout.cari_journal_item, parent,false)
-    return JurnalAdapter.MyViewHolder(itemView, mListener)
+    return MyViewHolder(itemView, mListener)
   }
 
   override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
     val currentitem = jurnalList[position]
-    holder.judul.text = currentitem.judul
-    holder.penulisTahun.text = currentitem.penulis + "\n " + currentitem.tahun
+    holder.itemView.apply {
+      findViewById<TextView>(R.id.judul).text = currentitem.judul
+      findViewById<TextView>(R.id.penulisTahun).text = currentitem.penulis + "\n " + currentitem.tahun
+//      findViewById<ImageButton>(R.id.detailBtn).setima (R.drawable.ic_baseline_arrow_forward_24)
+    }
+//    holder.judul.setOnClickListener {
+//      val intent = Intent(this@JurnalList, Login::class.java)
+//      startActivity(intent)
+//    }
+//    holder.judul.text = currentitem.judul
+//    holder.penulisTahun.text = currentitem.penulis + "\n " + currentitem.tahun
   }
 
   override fun getItemCount(): Int {
@@ -42,7 +53,8 @@ class JurnalAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Ada
   }
 
 
-  class MyViewHolder(itemView : View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
+  inner class MyViewHolder(itemView : View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView)
+  {
     val judul: TextView = itemView.findViewById(R.id.judul)
     val penulisTahun: TextView = itemView.findViewById(R.id.penulisTahun)
 
@@ -50,7 +62,7 @@ class JurnalAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Ada
 
     init {
       itemView.setOnClickListener {
-        listener.onItemClicked(adapterPosition)
+        mListener.onItemClicked(jurnalList[adapterPosition].key, adapterPosition)
       }
     }
   }

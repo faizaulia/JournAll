@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 
 class DetailJurnalActivity : AppCompatActivity() {
@@ -13,6 +14,7 @@ class DetailJurnalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detail_jurnal)
+        findViewById<TextView>(R.id.judulDetail).setText(intent.getStringExtra("key"))
         val dwnldBtn = findViewById<Button>(R.id.dwnldbtn)
         val returnBtn = findViewById<ImageButton>(R.id.returnButton)
         if(isLogin){
@@ -23,6 +25,7 @@ class DetailJurnalActivity : AppCompatActivity() {
         returnBtn.setOnClickListener {
             var i = Intent(this,JurnalList::class.java)
             startActivity(i)
+            finish()
         }
     }
 }

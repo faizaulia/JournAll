@@ -46,15 +46,15 @@ class JurnalList: AppCompatActivity() {
             jurnalArrayList.add(user!!)
           }
           var adapter = JurnalAdapter(jurnalArrayList)
-          jurnalRecycleView.adapter = adapter
           adapter.setOnItemClickListener(object : JurnalAdapter.onItemClickListener{
-            override fun onItemClicked(position: Int) {
+            override fun onItemClicked(key: String?, position: Int) {
               val intent = Intent(this@JurnalList, DetailJurnalActivity::class.java)
               intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-              intent.putExtra("key", position)
+              intent.putExtra("key", key)
               startActivity(intent)
             }
           })
+          jurnalRecycleView.adapter = adapter
         }
       }
       override fun onCancelled(error: DatabaseError) {

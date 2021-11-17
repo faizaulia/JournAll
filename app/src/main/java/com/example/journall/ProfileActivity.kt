@@ -13,9 +13,9 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.profile)
         val returnBtn = findViewById<ImageButton>(R.id.returnBtn)
-//        val user = Firebase.auth.currentUser
-//        findViewById<TextView>(R.id.nama).text = user!!.displayName
-//        findViewById<TextView>(R.id.email).text = user!!.email
+        val user = Firebase.auth.currentUser
+        findViewById<TextView>(R.id.nama).text = user!!.displayName
+        findViewById<TextView>(R.id.email).text = user!!.email
         returnBtn.setOnClickListener {
             finish()
         }

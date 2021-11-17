@@ -46,5 +46,5 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/judul"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
+        android:src="@drawable/ic_baseline_arrow_forward_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
