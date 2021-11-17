@@ -2,8 +2,10 @@ package com.example.journall
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.appcompat.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatViewInflater
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,10 +34,27 @@ class JurnalList: AppCompatActivity() {
     jurnalRecycleView.setHasFixedSize(true)
 
     jurnalArrayList = arrayListOf<Jurnal>()
+
     getJurnalData()
+
+    val searchButtons = findViewById<SearchView>(R.id.searchBar)
+//
+    searchButtons.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+      override fun onQueryTextSubmit(p0: String?): Boolean {
+        //Performs search when user hit the search button on the keyboard
+        return false
+      }
+      override fun onQueryTextChange(p0: String?): Boolean {
+        //Start filtering the list as user start entering the characters
+        Log.d("TAG", "${p0}")
+        jurnalArrayList.clear()
+        getJurnalData(p0)
+        return false
+      }
+    })
   }
 
-  private fun getJurnalData() {
+  private fun getJurnalData(keyword: String ?= null) {
     dbref = FirebaseDatabase.getInstance().getReference("Jurnal")
     dbref.addValueEventListener(object : ValueEventListener {
       override fun onDataChange(snapshot: DataSnapshot) {
@@ -43,7 +62,15 @@ class JurnalList: AppCompatActivity() {
           for (userSnapshot in snapshot.children){
             val user = userSnapshot.getValue(Jurnal::class.java)
             user!!.key = userSnapshot.key
-            jurnalArrayList.add(user!!)
+            if (keyword != null) {
+              val check: Boolean = user.judul!!.contains(keyword!!, ignoreCase = true)
+              if (check) {
+                jurnalArrayList.add(user!!)
+              }
+            }
+            else {
+              jurnalArrayList.add(user!!)
+            }
           }
           var adapter = JurnalAdapter(jurnalArrayList)
           adapter.setOnItemClickListener(object : JurnalAdapter.onItemClickListener{

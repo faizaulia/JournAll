@@ -23,8 +23,8 @@ class OwnedList: AppCompatActivity() {
 
     val returnBtn = findViewById<ImageButton>(R.id.returnBtn)
     val user = Firebase.auth.currentUser
-    findViewById<TextView>(R.id.nama).text = user!!.displayName
-    findViewById<TextView>(R.id.email).text = user!!.email
+//    findViewById<TextView>(R.id.nama).text = user!!.displayName
+//    findViewById<TextView>(R.id.email).text = user!!.email
     returnBtn.setOnClickListener {
       var i = Intent(this@OwnedList,MainActivity::class.java)
       startActivity(i)
