@@ -37,10 +37,14 @@ class OwnedList: AppCompatActivity() {
             }
           }
           var adapter = OwnedAdapter(jurnalArrayList)
+//          var adapter = DeleteJournalItemAdapter(jurnalArrayList)
           jurnalRecycleView.adapter = adapter
           adapter.setOnItemClickListener(object : OwnedAdapter.onItemClickListener{
             override fun onItemClicked(position: Int) {
-              Log.d("TAG", "TOLONG ISI ${position}")
+//              Log.d("TAG", "TOLONG ISI ${position}")
+              intent = Intent(this@OwnedList, OwnedList::class.java)
+              startActivity(intent)
+              finish()
               // ngapus fungsinya disini, tapi harus pass key nya dulu
             }
           })

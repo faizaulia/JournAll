@@ -5,10 +5,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.FirebaseDatabase
+import androidx.core.content.ContextCompat.startActivity
+
+import android.content.Intent.getIntent
+import android.content.Intent.getIntentOld
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
+
+
+
 
 class OwnedAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Adapter<OwnedAdapter.MyViewHolder>() {
 
@@ -32,9 +42,10 @@ class OwnedAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Adap
     holder.judul.text = currentitem.judul
     holder.penulisTahun.text = currentitem.penulis + "\n " + currentitem.tahun
 
-    holder.judul.setOnClickListener {
+    holder.deleteBtn.setOnClickListener {
       val dbref = FirebaseDatabase.getInstance().getReference("Jurnal")
       dbref.child(currentitem.key.toString()).removeValue()
+      mListener.onItemClicked(position)
     }
   }
 
@@ -46,13 +57,14 @@ class OwnedAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Adap
   class MyViewHolder(itemView : View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
     val judul: TextView = itemView.findViewById(R.id.judul)
     val penulisTahun: TextView = itemView.findViewById(R.id.penulisTahun)
+    val deleteBtn = itemView.findViewById<ImageButton>(R.id.deleteBtn)
 
     val intent: Intent? = null
 
-    init {
-      itemView.setOnClickListener {
-        listener.onItemClicked(adapterPosition)
-      }
-    }
+//    init {
+//      itemView.setOnClickListener {
+//        listener.onItemClicked(adapterPosition)
+//      }
+//    }
   }
 }

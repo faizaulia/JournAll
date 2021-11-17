@@ -1,6 +1,7 @@
 package com.example.journall
 
 import android.content.ContentValues
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -39,6 +40,9 @@ class InputJurnalActivity : AppCompatActivity() {
                 databaseReference.child(key!!).setValue(model).addOnCompleteListener {task ->
                     if (task.isSuccessful) {
                         Log.d(ContentValues.TAG, "Jurnal Berhasil Ditambahkan")
+                        intent = Intent(this@InputJurnalActivity, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
                     }
                 }
             }
