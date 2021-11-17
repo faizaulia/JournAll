@@ -3,10 +3,14 @@ package com.example.journall
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
 
 class OwnedList: AppCompatActivity() {
   private lateinit var dbref : DatabaseReference
@@ -16,6 +20,16 @@ class OwnedList: AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.profile)
+
+    val returnBtn = findViewById<ImageButton>(R.id.returnBtn)
+    val user = Firebase.auth.currentUser
+    findViewById<TextView>(R.id.nama).text = user!!.displayName
+    findViewById<TextView>(R.id.email).text = user!!.email
+    returnBtn.setOnClickListener {
+      var i = Intent(this@OwnedList,MainActivity::class.java)
+      startActivity(i)
+      finish()
+    }
 
     jurnalRecycleView = findViewById(R.id.ownedList)!!
     jurnalRecycleView.layoutManager = LinearLayoutManager(this)

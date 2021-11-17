@@ -17,6 +17,8 @@ class ProfileActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.nama).text = user!!.displayName
         findViewById<TextView>(R.id.email).text = user!!.email
         returnBtn.setOnClickListener {
+            var i = Intent(this@ProfileActivity,MainActivity::class.java)
+            startActivity(i)
             finish()
         }
 
