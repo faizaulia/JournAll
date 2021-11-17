@@ -54,7 +54,6 @@ class JurnalList: AppCompatActivity() {
               intent.putExtra("key", position)
               startActivity(intent)
             }
-
           })
         }
       }

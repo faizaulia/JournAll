@@ -32,10 +32,11 @@ class InputJurnalActivity : AppCompatActivity() {
                 Log.d("TAG", "TOLONG ISI SELURUH KOLOMNYA")
             }
             else {
-                var model = JurnalModel(judul, penulis, tahun, abstrak)
-                var id = databaseReference.push().key
+                var key = databaseReference.push().key
+                var keyString = key.toString()
+                var model = JurnalModel(judul, penulis, tahun, abstrak, keyString, 1)
 
-                databaseReference.child(id!!).setValue(model).addOnCompleteListener {task ->
+                databaseReference.child(key!!).setValue(model).addOnCompleteListener {task ->
                     if (task.isSuccessful) {
                         Log.d(ContentValues.TAG, "Jurnal Berhasil Ditambahkan")
                     }

@@ -1,20 +1,16 @@
 package com.example.journall
 
-import android.app.Activity
-import android.app.Application
-import android.content.ContentValues
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
-class JurnalAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Adapter<JurnalAdapter.MyViewHolder>() {
+class OwnedAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Adapter<OwnedAdapter.MyViewHolder>() {
 
   private lateinit var mListener: onItemClickListener
 
@@ -27,14 +23,19 @@ class JurnalAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Ada
   }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-    val itemView = LayoutInflater.from(parent.context).inflate(R.layout.cari_journal_item, parent,false)
-    return JurnalAdapter.MyViewHolder(itemView, mListener)
+    val itemView = LayoutInflater.from(parent.context).inflate(R.layout.delete_journal_item, parent,false)
+    return OwnedAdapter.MyViewHolder(itemView, mListener)
   }
 
   override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
     val currentitem = jurnalList[position]
     holder.judul.text = currentitem.judul
     holder.penulisTahun.text = currentitem.penulis + "\n " + currentitem.tahun
+
+    holder.judul.setOnClickListener {
+      val dbref = FirebaseDatabase.getInstance().getReference("Jurnal")
+      dbref.child(currentitem.key.toString()).removeValue()
+    }
   }
 
   override fun getItemCount(): Int {
