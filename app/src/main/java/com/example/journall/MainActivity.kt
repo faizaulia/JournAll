@@ -12,8 +12,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
-    //TODO : Get name of guest to change, Get login status
-    private var isLogin = false
+
+    private lateinit var firebaseAuth : FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,24 +23,37 @@ class MainActivity : AppCompatActivity() {
         val uploadButton = findViewById<ImageButton>(R.id.uploadButton)
         val logoutButton = findViewById<ImageButton>(R.id.logoutButton)
         val login = findViewById<TextView>(R.id.loginButton)
+
         val user = Firebase.auth.currentUser
-        if(user != null){
+
+        if(user != null) {
             val username = user.displayName
-            val newColor = ContextCompat.getColorStateList(this@MainActivity,R.color.primary)
 
             findViewById<TextView>(R.id.username).text = username
             findViewById<TextView>(R.id.loginButton).visibility = View.GONE
-
-            profileButton.isEnabled = true
+            val newColor = ContextCompat.getColorStateList(this@MainActivity, R.color.primary)
             profileButton.backgroundTintList = newColor
-            cariButton.isEnabled = true
             cariButton.backgroundTintList = newColor
-            uploadButton.isEnabled = true
             uploadButton.backgroundTintList = newColor
-            logoutButton.isEnabled = true
             logoutButton.backgroundTintList = newColor
+        }
+        else {
+
+            profileButton.isEnabled = false
+            profileButton.isClickable = false
+
+            cariButton.isEnabled = false
+            cariButton.isClickable = false
+
+            uploadButton.isEnabled = false
+            uploadButton.isClickable = false
+
+            logoutButton.isEnabled = false
+            logoutButton.isClickable = false
 
         }
+
+
         login.setOnClickListener{
             intent = Intent(this@MainActivity, Login::class.java)
             startActivity(intent)
