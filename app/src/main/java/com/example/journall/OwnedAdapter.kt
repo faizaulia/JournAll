@@ -1,24 +1,13 @@
 package com.example.journall
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.FirebaseDatabase
-import androidx.core.content.ContextCompat.startActivity
-
-import android.content.Intent.getIntent
-import android.content.Intent.getIntentOld
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
-
-
-
 
 class OwnedAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Adapter<OwnedAdapter.MyViewHolder>() {
 

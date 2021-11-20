@@ -3,14 +3,11 @@ package com.example.journall
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatViewInflater
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class JurnalList: AppCompatActivity() {
@@ -38,7 +35,7 @@ class JurnalList: AppCompatActivity() {
     getJurnalData()
 
     val searchButtons = findViewById<SearchView>(R.id.searchBar)
-//
+
     searchButtons.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
       override fun onQueryTextSubmit(p0: String?): Boolean {
         //Performs search when user hit the search button on the keyboard

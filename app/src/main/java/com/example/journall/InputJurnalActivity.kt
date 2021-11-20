@@ -1,6 +1,5 @@
 package com.example.journall
 
-import android.R.attr
 import android.app.ProgressDialog
 import android.content.ContentValues
 import android.content.Intent
@@ -13,18 +12,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
-import com.google.android.gms.tasks.Continuation
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.StorageReference
-
 import com.google.firebase.storage.FirebaseStorage
-
 import java.util.*
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import java.io.File
-import java.lang.Exception
-
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class InputJurnalActivity : AppCompatActivity() {
     private var PICK_IMAGE_REQUEST = 12
@@ -42,10 +35,14 @@ class InputJurnalActivity : AppCompatActivity() {
                 val filename = UUID.randomUUID().toString()
                 val ref = FirebaseStorage.getInstance().getReference("/uploads/${filename}.pdf")
 
+                val progressDialog = ProgressDialog(this)
+                progressDialog.setTitle("Uploading...")
+                progressDialog.show()
+
                 ref.putFile(uri).addOnSuccessListener {
-//                    Toast.makeText(this, "Success upload", Toast.LENGTH_LONG).show()
                     ref.downloadUrl.addOnSuccessListener {
                         urlDownload = it.toString()
+                        progressDialog.dismiss()
                     }
                 }.addOnFailureListener{
                     Toast.makeText(this, "Fail upload", Toast.LENGTH_LONG).show()
