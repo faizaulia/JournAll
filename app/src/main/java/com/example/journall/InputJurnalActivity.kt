@@ -88,7 +88,8 @@ class InputJurnalActivity : AppCompatActivity() {
             else {
                 var key = databaseReference.push().key
                 var keyString = key.toString()
-                var model = JurnalModel(judul, penulis, tahun, abstrak, keyString, 1, urlDownload)
+                var id_pengguna = Firebase.auth.currentUser!!.uid.toString()
+                var model = JurnalModel(judul, penulis, tahun, abstrak, keyString, id_pengguna, urlDownload)
 
                 databaseReference.child(key!!).setValue(model).addOnCompleteListener {task ->
                     if (task.isSuccessful) {
