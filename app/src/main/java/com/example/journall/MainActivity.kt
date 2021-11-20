@@ -37,21 +37,21 @@ class MainActivity : AppCompatActivity() {
             uploadButton.backgroundTintList = newColor
             logoutButton.backgroundTintList = newColor
         }
-        else {
-
-            profileButton.isEnabled = false
-            profileButton.isClickable = false
-
-            cariButton.isEnabled = false
-            cariButton.isClickable = false
-
-            uploadButton.isEnabled = false
-            uploadButton.isClickable = false
-
-            logoutButton.isEnabled = false
-            logoutButton.isClickable = false
-
-        }
+//        else {
+//
+//            profileButton.isEnabled = false
+//            profileButton.isClickable = false
+//
+//            cariButton.isEnabled = false
+//            cariButton.isClickable = false
+//
+//            uploadButton.isEnabled = false
+//            uploadButton.isClickable = false
+//
+//            logoutButton.isEnabled = false
+//            logoutButton.isClickable = false
+//
+//        }
 
 
         login.setOnClickListener{
