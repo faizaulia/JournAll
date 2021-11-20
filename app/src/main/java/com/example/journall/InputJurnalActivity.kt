@@ -8,7 +8,9 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 
 class InputJurnalActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +37,8 @@ class InputJurnalActivity : AppCompatActivity() {
             else {
                 var key = databaseReference.push().key
                 var keyString = key.toString()
-                var model = JurnalModel(judul, penulis, tahun, abstrak, keyString, 1)
+                var id_pengguna = Firebase.auth.currentUser!!.uid.toString()
+                var model = JurnalModel(judul, penulis, tahun, abstrak, keyString, id_pengguna)
 
                 databaseReference.child(key!!).setValue(model).addOnCompleteListener {task ->
                     if (task.isSuccessful) {

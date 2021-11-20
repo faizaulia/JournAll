@@ -23,8 +23,8 @@ class OwnedList: AppCompatActivity() {
 
     val returnBtn = findViewById<ImageButton>(R.id.returnBtn)
     val user = Firebase.auth.currentUser
-//    findViewById<TextView>(R.id.nama).text = user!!.displayName
-//    findViewById<TextView>(R.id.email).text = user!!.email
+    findViewById<TextView>(R.id.nama).text = user!!.displayName
+    findViewById<TextView>(R.id.email).text = user!!.email
     returnBtn.setOnClickListener {
       var i = Intent(this@OwnedList,MainActivity::class.java)
       startActivity(i)
@@ -44,10 +44,10 @@ class OwnedList: AppCompatActivity() {
     dbref.addValueEventListener(object : ValueEventListener {
       override fun onDataChange(snapshot: DataSnapshot) {
         if (snapshot.exists()){
-          for (userSnapshot in snapshot.children){
-            val user = userSnapshot.getValue(Jurnal::class.java)
-            if (user != null && user.id_pengguna == 1) { //ntar cek ama id user disini, kalau sama tambahin
-              jurnalArrayList.add(user!!)
+          for (jurnalSnapshot in snapshot.children){
+            val jurnal = jurnalSnapshot.getValue(Jurnal::class.java)
+            if (jurnal != null && jurnal.id_pengguna == Firebase.auth.currentUser!!.uid) { //ntar cek ama id user disini, kalau sama tambahin
+              jurnalArrayList.add(jurnal!!)
             }
           }
           var adapter = OwnedAdapter(jurnalArrayList)
