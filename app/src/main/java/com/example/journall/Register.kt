@@ -2,6 +2,7 @@ package com.example.journall
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -62,6 +63,7 @@ class Register : AppCompatActivity() {
 
                                 val profileUpdates = userProfileChangeRequest {
                                     displayName = usernameReg
+                                    photoUri = Uri.parse("https://firebasestorage.googleapis.com/v0/b/journall-19c42.appspot.com/o/avatar%2Favatar-g035793718_640.png?alt=media&token=5ee8dca8-8b26-4daf-8d6d-2bcb1c6b0743")
                                 }
 
                                 firebaseUser!!.updateProfile(profileUpdates).addOnCompleteListener { task ->
