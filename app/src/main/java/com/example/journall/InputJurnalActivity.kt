@@ -79,8 +79,8 @@ class InputJurnalActivity : AppCompatActivity() {
             val tahun = findViewById<EditText>(R.id.inputTahun).getText().toString()
             val abstrak = findViewById<EditText>(R.id.inputAbstrak).getText().toString()
 
-            if ((judul.length < 1) || (penulis.length < 1) || (tahun.length < 1) || (abstrak.length < 1)) { // INI KALAU ADA YANG NULL BATALIN
-                Log.d("TAG", "TOLONG ISI SELURUH KOLOMNYA")
+            if ((judul.length < 1) || (penulis.length < 1) || (tahun.length < 1) || (abstrak.length < 1) || (urlDownload == null)) { // INI KALAU ADA YANG NULL BATALIN
+                Toast.makeText(this, "Please fill all field!", Toast.LENGTH_SHORT).show()
             }
             else {
                 var key = databaseReference.push().key
@@ -90,7 +90,7 @@ class InputJurnalActivity : AppCompatActivity() {
 
                 databaseReference.child(key!!).setValue(model).addOnCompleteListener {task ->
                     if (task.isSuccessful) {
-                        Log.d(ContentValues.TAG, "Jurnal Berhasil Ditambahkan")
+                        Toast.makeText(this, "Jurnal Berhasil Ditambahkan", Toast.LENGTH_SHORT).show()
                         intent = Intent(this@InputJurnalActivity, MainActivity::class.java)
                         startActivity(intent)
                         finish()

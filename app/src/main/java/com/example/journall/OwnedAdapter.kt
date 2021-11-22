@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.FirebaseDatabase
 
@@ -49,11 +50,5 @@ class OwnedAdapter(private val jurnalList: ArrayList<Jurnal>): RecyclerView.Adap
     val deleteBtn = itemView.findViewById<ImageButton>(R.id.deleteBtn)
 
     val intent: Intent? = null
-
-//    init {
-//      itemView.setOnClickListener {
-//        listener.onItemClicked(adapterPosition)
-//      }
-//    }
   }
 }
