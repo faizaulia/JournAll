@@ -3,14 +3,8 @@ package com.example.journall
 import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
-import android.graphics.BitmapFactory
-import android.icu.number.NumberFormatter.with
-import android.icu.number.NumberRangeFormatter.with
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
-import android.util.Log
-import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
@@ -23,15 +17,8 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.UploadTask
-
-import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.storage.FirebaseStorage
-
-import com.google.firebase.storage.StorageReference
-import com.squareup.picasso.Picasso
-import java.net.URI
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -50,9 +37,6 @@ class OwnedList: AppCompatActivity() {
     val returnBtn = findViewById<ImageButton>(R.id.returnBtn)
     val user = Firebase.auth.currentUser
     val ava = findViewById<ImageView>(R.id.avatar)
-//    val bmp = BitmapFactory.decodeStream(contentResolver.openInputStream(user?.photoUrl!!))
-//    Picasso.get().load(bmp).into(ava)
-//    findViewById<ImageView>(R.id.avatar).setImageBitmap(bmp)
     Glide.with(this).load(user!!.photoUrl).centerCrop().into(ava)
     findViewById<TextView>(R.id.nama).text = user!!.displayName
     findViewById<TextView>(R.id.email).text = user!!.email
@@ -95,7 +79,6 @@ class OwnedList: AppCompatActivity() {
 
         ref.putFile(imageUri).addOnSuccessListener {
           ref.downloadUrl.addOnSuccessListener {
-//            urlDownload = it.toString()
             val user = Firebase.auth.currentUser
             val profileUpdates = userProfileChangeRequest {
               photoUri = it

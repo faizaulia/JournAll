@@ -42,9 +42,6 @@ class MainActivity : AppCompatActivity() {
             profileButton.isEnabled = false
             profileButton.isClickable = false
 
-            cariButton.isEnabled = false
-            cariButton.isClickable = false
-
             uploadButton.isEnabled = false
             uploadButton.isClickable = false
 

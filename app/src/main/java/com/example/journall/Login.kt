@@ -15,7 +15,7 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         val pendaftaran = findViewById<TextView>(R.id.tv_sign)
-        val forgot = findViewById<TextView>(R.id.tv_forget)
+//        val forgot = findViewById<TextView>(R.id.tv_forget)
         val email = findViewById<EditText>(R.id.edEmail)
         val password = findViewById<EditText>(R.id.ed_password)
         val loginBtn = findViewById<Button>(R.id.btn_login)
@@ -24,10 +24,10 @@ class Login : AppCompatActivity() {
             intent = Intent(this@Login, Register::class.java)
             startActivity(intent)
         }
-        forgot.setOnClickListener {
-            intent = Intent(this@Login, forgotPassword::class.java)
-            startActivity(intent)
-        }
+//        forgot.setOnClickListener {
+//            intent = Intent(this@Login, forgotPassword::class.java)
+//            startActivity(intent)
+//        }
 
         loginBtn.setOnClickListener {
             if (TextUtils.isEmpty(email.text.toString()) ||

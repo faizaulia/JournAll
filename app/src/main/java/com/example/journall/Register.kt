@@ -28,8 +28,6 @@ class Register : AppCompatActivity() {
         val email = findViewById<EditText>(R.id.ed_email)
         val password = findViewById<EditText>(R.id.ed_passregis)
         val cpassword = findViewById<EditText>(R.id.ed_cmpass)
-        val question = findViewById<EditText>(R.id.ed_squestion)
-        val answer = findViewById<EditText>(R.id.ed_sanswer)
         val registerBtn = findViewById<Button>(R.id.btn_register)
 
         returnBtnregis.setOnClickListener {
@@ -40,9 +38,7 @@ class Register : AppCompatActivity() {
             if (TextUtils.isEmpty(username.text.toString()) ||
                 TextUtils.isEmpty(email.text.toString()) ||
                 TextUtils.isEmpty(password.text.toString()) ||
-                TextUtils.isEmpty(cpassword.text.toString()) ||
-                TextUtils.isEmpty(question.text.toString()) ||
-                TextUtils.isEmpty(answer.text.toString()))
+                TextUtils.isEmpty(cpassword.text.toString()))
             {
                 Toast.makeText(this@Register, "Please fill all field!", Toast.LENGTH_SHORT).show()
             }
